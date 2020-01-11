@@ -1,5 +1,6 @@
 package com.trupin.shimi.shoppinglist;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,10 +43,16 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                addNewItem(view);
             }
         });
+    }
+
+    private void addNewItem(View view) {
+        Intent intent = new Intent(this, AddNewItemActivity.class);
+        startActivity(intent);
+        /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();*/
     }
 
     @Override
